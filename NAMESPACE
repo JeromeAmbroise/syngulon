@@ -3,5 +3,7 @@
 export(accessionlist)
 export(compute.n.bacteria)
 export(downloadannotation)
+export(downloadgenome)
 export(extract.bacteria.table)
 export(extract.phylum)
+export(extract1gene)
