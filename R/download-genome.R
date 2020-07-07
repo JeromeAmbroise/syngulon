@@ -7,6 +7,8 @@
 #' @return il ecrit dans le repertoire
 #' @export
 
+
+
 downloadgenome <- function(maxOrganism,accession.list,repertoire)
 {
   library(reutils)
