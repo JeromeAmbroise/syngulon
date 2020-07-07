@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param selectedspecies
+#' @param selectedgene
+#' @param repertoire_gene
+#' @param repertoire_annotation
+#' @param repertoire_genome
+#'
+#' @return
+#' @export
+
 extract1gene <- function(selectedspecies='ecoli',selectedgene='tolB',repertoire_gene,repertoire_annotation,repertoire_genome)
 {
   library(reutils)

@@ -6,15 +6,6 @@
 #' @return a table with the one line for each genome available
 #' @export
 
-
-#' Title
-#'
-#' @param phylum
-#'
-#' @return
-#' @export
-#'
-#' @examples
 extract.bacteria.table <- function(phylum)
 {
   library(genomes)

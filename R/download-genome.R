@@ -4,7 +4,7 @@
 #' @param accession.list la liste des différentes especes
 #' @param repertoire l'emplacement pour telecharger les fichiers
 #'
-#' @return il ecrit dans le repertoire
+#' @return
 #' @export
 
 
@@ -40,6 +40,6 @@ downloadgenome <- function(maxOrganism,accession.list,repertoire)
       }
       seq <- readDNAStringSet(list.files(paste0(repertoire,species[i],'/',current.accession[1]),full.names = T))
       writeXStringSet(seq,paste0(repertoire,gsub(species[i],pattern = ' ',replacement = '.'),'/',paste(current.accession[1:min(5,N.chromosomes)],collapse = ':'),'.fasta'))
-    }
+     }
   }
 }
