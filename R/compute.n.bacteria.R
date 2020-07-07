@@ -1,12 +1,12 @@
-
-#' Renvoie une data frame avec le nombre de même organism
+#' Compute the number of genome available for each bacteria
 #'
-#' @param phylum data frame
-#' @param bacteria.table Table de bactérie
+#' to compute later
 #'
-#' @return Renvoie une data frame avec le nombre de même organism
+#' @param bacteria.table a data.frame produce by the function extract.bacteria.table
+#' @return a table with the number of available genomes for each bacteria
 #' @export
-compute.n.bacteria <- function(phylum,bacteria.table)
+
+compute.n.bacteria <- function(bacteria.table)
 {
   library(dplyr)
   bacteria.n <- data.frame(bacteria.table%>%group_by(Organism)%>%summarise(n=n()))
