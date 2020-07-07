@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-accession-list <- function(proks.selected,species,repertoire)
+accessionlist <- function(proks.selected,species,repertoire)
 {
   library(reutils)
   library(ape)
