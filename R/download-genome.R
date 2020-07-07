@@ -1,3 +1,12 @@
+#' Telecharge le genome
+#'
+#' @param maxOrganism un entier du nombre d'organisme max
+#' @param accession.list la liste des différentes especes
+#' @param repertoire l'emplacement pour telecharger les fichiers
+#'
+#' @return il ecrit dans le repertoire
+#' @export
+
 downloadgenome <- function(maxOrganism,accession.list,repertoire)
 {
   library(reutils)
