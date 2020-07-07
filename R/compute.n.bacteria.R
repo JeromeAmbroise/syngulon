@@ -1,7 +1,7 @@
 
 #' Renvoie une data frame avec le nombre de même organism
 #'
-#' @param phylum date frame
+#' @param phylum data frame
 #' @param bacteria.table Table de bactérie
 #'
 #' @return Renvoie une data frame avec le nombre de même organism

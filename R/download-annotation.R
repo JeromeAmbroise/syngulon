@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param maxOrga
+#' @param maxOrganism
 #' @param accession.list
 #' @param repertoire
 #'
@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-download-annotation <- function(maxOrga=20,accession.list,repertoire )
+download-annotation <- function(maxOrganism=20,accession.list,repertoire )
 {
   library(reutils)
   library(ape)
@@ -25,7 +25,7 @@ download-annotation <- function(maxOrga=20,accession.list,repertoire )
     accession  <- accession$accession
     accession <- accession[substr(accession,1,2)!='LR']
     N.accession <- length(accession)
-    for(j in 1:min(c(maxOrga,N.accession)))
+    for(j in 1:min(c(maxOrganism,N.accession)))
     {
       current.accession <- accession[j]
       current.accession <- strsplit(current.accession,split=':')[[1]]
