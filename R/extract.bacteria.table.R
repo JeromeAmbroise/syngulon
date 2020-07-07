@@ -5,7 +5,6 @@
 #' @param phylum a data.frame produced by the function extract.phylum
 #' @return a table with the one line for each genome available
 #' @export
-
 extract.bacteria.table <- function(phylum)
 {
   library(genomes)
