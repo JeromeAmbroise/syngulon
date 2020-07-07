@@ -1,3 +1,9 @@
+#' extract a table of the phylum of bacteria based on the taxize package
+#'
+#' to compute later
+#'
+#' @return a table with the one line for each phylum
+#' @export
 
 
 
