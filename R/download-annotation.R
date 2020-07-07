@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-download-annotation <- function(maxOrganism=20,accession.list,repertoire )
+downloadannotation <- function(maxOrganism=20,accession.list,repertoire )
 {
   library(reutils)
   library(ape)

@@ -4,11 +4,6 @@
 #'
 #' @return a table with the one line for each phylum
 #' @export
-
-
-
-
-
 extract.phylum <- function()
 {
   library(taxize)
