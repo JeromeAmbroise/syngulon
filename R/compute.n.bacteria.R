@@ -1,4 +1,11 @@
 
+#' Renvoie une data frame avec le nombre de même organism
+#'
+#' @param phylum date frame
+#' @param bacteria.table Table de bactérie
+#'
+#' @return Renvoie une data frame avec le nombre de même organism
+#' @export
 compute.n.bacteria <- function(phylum,bacteria.table)
 {
   library(dplyr)
