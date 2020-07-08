@@ -1,10 +1,17 @@
-exctratblast <- function()
+exctratblast <- function(accession.list,repertoire_genome,repertoire_gene_annotation,repertoire_blast_based)
 {
+  species <- gsub(basename(accession.list),pattern = '.csv',replacement = '')
+  n.species <- length(species)
+  genometoscreen <- c()
+  for (i in 1:nspecies) {
+    genometoscreen <- c(genometoscreen,list.files(paste0(repertoire_genome,species[i]),recursive = F,full.names = T),list.files('04-genomes/Vibrio_cholerae/',recursive = F,full.names = T))
+    genometoscreen <- genometoscreen[grep('fasta',genometoscreen)]
+  }
 
-  genometoscreen <- c(list.files('04-genomes/Escherichia_coli/',recursive = F,full.names = T),list.files('04-genomes/Vibrio_cholerae/',recursive = F,full.names = T))
-  genometoscreen <- genometoscreen[grep('fasta',genometoscreen)]
 
-  genetosreen <- list.files('05-genes-annotation-based/',full.names = T)
+
+
+  genetosreen <- list.files(repertoire_gene_annotation,full.names = T)
   genetosreen <- genetosreen[grep('fasta',genetosreen)]
 
   ngenes <- length(genetosreen)
@@ -20,6 +27,6 @@ exctratblast <- function()
       all.sequences <- DNAStringSet(c(all.sequences,sequence))
       print(j)
     }
-    writeXStringSet(all.sequences,paste0('06-genes-blast-based/',basename(currentgene)))
+    writeXStringSet(all.sequences,paste0(repertoire_blast_based,basename(currentgene)))
   }
 }
