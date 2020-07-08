@@ -1,5 +1,10 @@
 extract.closest <- function(genomePath,genepath,lengthconf = 95, identconf =95,offset=0 )
 {
+  library(reutils)
+  library(ape)
+  library(seqinr)
+  library(Biostrings)
+  library(dplyr)
   dir.create('temp')
   dir.create('temp/dbblast')
   myarg <-paste0('-in ',genomePath,' -out temp/dbblast/db -dbtype nucl')
