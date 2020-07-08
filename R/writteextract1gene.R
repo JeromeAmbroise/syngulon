@@ -6,9 +6,8 @@
 #'
 #' @return
 #' @export
-#'
-#' @examples
-writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotation)
+
+writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotation,repertoire_annotation,repertoire_genome)
 {
   library(reutils)
   library(ape)
@@ -26,7 +25,7 @@ writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotati
     dir.create(paste0(repertoire__gene_annotation,species[i]))
     for(j in 1:ngenes)
     {
-      extract1gene(selectedspecies=species[i],selectedgene=collicin[j])
+      extract1gene(selectedspecies=species[i],selectedgene=collicin[j],repertoire__gene_annotation,repertoire_annotation,repertoire_genome)
     }
   }
   fasta.list=c()

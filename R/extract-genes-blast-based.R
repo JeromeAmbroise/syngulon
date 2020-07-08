@@ -16,7 +16,7 @@ exctratblast <- function(accession.list,repertoire_genome,repertoire_gene_annota
   library(Biostrings)
   library(dplyr)
   species <- gsub(basename(accession.list),pattern = '.csv',replacement = '')
-  n.species <- length(species)
+  nspecies <- length(species)
   genometoscreen <- c()
   for (i in 1:nspecies) {
     genometoscreen <- c(genometoscreen,list.files(paste0(repertoire_genome,species[i]),recursive = F,full.names = T),list.files('04-genomes/Vibrio_cholerae/',recursive = F,full.names = T))
