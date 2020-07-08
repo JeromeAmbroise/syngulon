@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param accession.list
+#' @param repertoire_genome
+#' @param repertoire_gene_annotation
+#' @param repertoire_blast_based
+#'
+#' @return
+#' @export
+
 exctratblast <- function(accession.list,repertoire_genome,repertoire_gene_annotation,repertoire_blast_based)
 {
   library(reutils)

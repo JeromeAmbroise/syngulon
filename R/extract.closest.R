@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param genomePath
+#' @param genepath
+#' @param lengthconf
+#' @param identconf
+#' @param offset
+#'
+#' @return
+#' @export
+
 extract.closest <- function(genomePath,genepath,lengthconf = 95, identconf =95,offset=0 )
 {
   library(reutils)

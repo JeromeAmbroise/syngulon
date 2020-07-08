@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param accession.list
+#' @param collicin
+#' @param repertoire__gene_annotation
+#'
+#' @return
+#' @export
+#'
+#' @examples
 writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotation)
 {
   library(reutils)
