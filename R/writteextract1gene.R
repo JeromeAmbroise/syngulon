@@ -22,7 +22,7 @@ writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotati
   fasta.list=c()
   for (i in 1:nspecies) {
     fasta.list.newspecies <- list.files(paste0(repertoire__gene_annotation,species[i],'/'),full.names = T)##peut etre pas mettre /
-    fasta.list.newspecies <- fasta.list.newspecies[grep('fasta',fasta.list.ecoli)]
+    fasta.list.newspecies <- fasta.list.newspecies[grep('fasta',fasta.list.newspecies)]
     fasta.list <- c(fasta.list,fasta.list.newspecies)
   }
 
