@@ -7,7 +7,7 @@
 #' @return
 #' @export
 
-writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotation,repertoire_annotation,repertoire_genome)
+writteextractallgenes <- function(accession.list,collicin,repertoire__gene_annotation,repertoire_annotation,repertoire_genome)
 {
   library(reutils)
   library(ape)
