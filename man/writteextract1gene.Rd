@@ -4,7 +4,13 @@
 \alias{writteextract1gene}
 \title{Title}
 \usage{
-writteextract1gene(accession.list, collicin, repertoire__gene_annotation)
+writteextract1gene(
+  accession.list,
+  collicin,
+  repertoire__gene_annotation,
+  repertoire_annotation,
+  repertoire_genome
+)
 }
 \arguments{
 \item{repertoire__gene_annotation}{}
