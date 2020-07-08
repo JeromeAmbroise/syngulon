@@ -4,7 +4,7 @@
 \alias{downloadgenome}
 \title{Telecharge le genome}
 \usage{
-downloadgenome(maxOrganism, accession.list, repertoire)
+downloadgenome(maxOrganism, accession.list, repertoire, indextorestart)
 }
 \arguments{
 \item{maxOrganism}{un entier du nombre d'organisme max}
@@ -12,6 +12,8 @@ downloadgenome(maxOrganism, accession.list, repertoire)
 \item{accession.list}{la liste des différentes especes}
 
 \item{repertoire}{l'emplacement pour telecharger les fichiers}
+
+\item{indextorestart}{: the index to restart the analysis. for example, if you interupted the analysis after 20 species, you can specify indextorestart=21}
 }
 \value{
 

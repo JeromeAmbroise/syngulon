@@ -4,10 +4,15 @@
 \alias{downloadannotation}
 \title{Title}
 \usage{
-downloadannotation(maxOrganism = 20, accession.list, repertoire)
+downloadannotation(
+  maxOrganism = 20,
+  accession.list,
+  repertoire,
+  indextorestart
+)
 }
 \arguments{
-\item{repertoire}{}
+\item{indextorestart}{: the index to restart the analysis. for example, if you interupted the analysis after 20 species, you can specify indextorestart=21}
 }
 \value{
 

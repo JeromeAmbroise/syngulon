@@ -4,7 +4,7 @@
 \alias{accessionlist}
 \title{Title}
 \usage{
-accessionlist(proks.selected, species, repertoire)
+accessionlist(bacteria.table, species, repertoire)
 }
 \arguments{
 \item{repertoire}{}
