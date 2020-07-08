@@ -30,6 +30,6 @@ writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotati
   for(i in 1:length(genename))
   {
     current.sequence <- readDNAStringSet(fasta.list[grep(genename[i],fasta.list)])
-    writeXStringSet(current.sequence,paste0('05-genes-annotation-based/',genename[i]))
+    writeXStringSet(current.sequence,paste0(repertoire__gene_annotation,genename[i]))
   }
 }
