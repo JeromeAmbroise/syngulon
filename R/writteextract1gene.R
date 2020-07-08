@@ -1,5 +1,10 @@
 writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotation)
 {
+  library(reutils)
+  library(ape)
+  library(seqinr)
+  library(Biostrings)
+  library(dplyr)
   species <- gsub(basename(accession.list),pattern = '.csv',replacement = '')
   nspecies <- length(species)
   collicin <- collicin$genename
@@ -14,12 +19,12 @@ writteextract1gene <- function(accession.list,collicin,repertoire__gene_annotati
       extract1gene(selectedspecies=species[i],selectedgene=collicin[j])
     }
   }
-
-  fasta.list.ecoli <- list.files(paste0(repertoire__gene_annotation,species),full.names = T)
-  fasta.list.ecoli <- fasta.list.ecoli[grep('fasta',fasta.list.ecoli)]
-  fasta.list.cholerae <- list.files('05-genes-annotation-based/Vibrio_cholerae/',full.names = T)
-  fasta.list.cholerae <- fasta.list.cholerae[grep('fasta',fasta.list.cholerae)]
-  fasta.list <- c(fasta.list.ecoli,fasta.list.cholerae)
+  fasta.list=c()
+  for (i in 1:nspecies) {
+    fasta.list.newspecies <- list.files(paste0(repertoire__gene_annotation,species[i],'/'),full.names = T)##peut etre pas mettre /
+    fasta.list.newspecies <- fasta.list.newspecies[grep('fasta',fasta.list.ecoli)]
+    fasta.list <- c(fasta.list,fasta.list.newspecies)
+  }
 
   genename <- basename(fasta.list.ecoli)
   for(i in 1:length(genename))
