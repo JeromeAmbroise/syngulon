@@ -52,5 +52,6 @@ downloadannotation <- function(maxOrganism=20,accession.list,repertoire,indextor
         write.csv(full.annotation,paste0(repertoire,species[i],'/',paste(current.accession[1:min(5,N.chromosomes)],collapse = ':'),'.csv'),row.names = F)
       }
     }
+  print(i)
   }
 }
