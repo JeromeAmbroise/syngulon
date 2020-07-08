@@ -11,13 +11,13 @@ extract.bacteria.table <- function(phylum)
   library(dplyr)
   proks <- reports("prokaryotes.txt")
   proks.selected <- proks%>%filter(Status=='Complete Genome'|Status=='Chromosome')
-  proks.selected <- proks.selected[grep(paste(phylum$taxonname,collapse='|'),proks.selected$SubGroup,ignore.case = T),]
-  proks.selected$Organism <- unlist(lapply(strsplit(proks.selected$Organism,split=' '),function(x) paste(x[1],x[2],sep=' ')))
-  proks.selected$Organism <- gsub(proks.selected$Organism,pattern='\\[',replacement = '')
-  proks.selected$Organism <- gsub(proks.selected$Organism,pattern='\\]',replacement = '.')
-  proks.selected$Organism <- gsub(proks.selected$Organism,pattern='\'',replacement = '')
-  proks.selected$Organism <- proks.selected$Organism %>% gsub(' ','_',.)
-  return(proks.selected)
+  bacteria.table <- bacteria.table[grep(paste(phylum$taxonname,collapse='|'),bacteria.table$SubGroup,ignore.case = T),]
+  bacteria.table$Organism <- unlist(lapply(strsplit(bacteria.table$Organism,split=' '),function(x) paste(x[1],x[2],sep=' ')))
+  bacteria.table$Organism <- gsub(bacteria.table$Organism,pattern='\\[',replacement = '')
+  bacteria.table$Organism <- gsub(bacteria.table$Organism,pattern='\\]',replacement = '.')
+  bacteria.table$Organism <- gsub(bacteria.table$Organism,pattern='\'',replacement = '')
+  bacteria.table$Organism <- bacteria.table$Organism %>% gsub(' ','_',.)
+  return(bacteria.table)
 }
 
 

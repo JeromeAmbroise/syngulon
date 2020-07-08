@@ -18,7 +18,6 @@ accessionlist <- function(bacteria.table,species,repertoire)
   library(WriteXLS)
   bacteria.table$Replicons <- unlist(lapply(strsplit(bacteria.table$Replicons,split='plasmid'),function(x) x[1]))
   n.species <- length(species)
-
   for(i in 1:n.species)
   {
     data1species <- bacteria.table[bacteria.table$Organism==species[i],]

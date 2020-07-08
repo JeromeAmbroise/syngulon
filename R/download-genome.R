@@ -33,13 +33,15 @@ downloadgenome <- function(maxOrganism,accession.list,repertoire,indextorestart)
       current.accession <- strsplit(current.accession,split=':')[[1]]
       current.accession <- gsub(current.accession,pattern = ' ',replacement = '')
       N.chromosomes <- length(current.accession)
-      dir.create(paste0(repertoire,gsub(species[i],pattern = ' ',replacement = '.'),'/',current.accession[1]))
+      dir.create(paste0(repertoire,species[i],'/',current.accession[1]))
       for(k in 1:min(5,N.chromosomes))
       {
         seq <- read.GenBank(current.accession[k])
-        write.FASTA(seq,paste0(repertoire,gsub(species[i],pattern = ' ',replacement = '.'),'/',current.accession[1],'/',current.accession[k],'.fasta'))
+        write.FASTA(seq,paste0(repertoire,species[i],'/',current.accession[1],'/',current.accession[k],'.fasta'))
       }
+      unlink(paste0(repertoire,species[i],'/',current.accession[1]))
       seq <- readDNAStringSet(list.files(paste0(repertoire,species[i],'/',current.accession[1]),full.names = T))
+
       writeXStringSet(seq,paste0(repertoire,gsub(species[i],pattern = ' ',replacement = '.'),'/',paste(current.accession[1:min(5,N.chromosomes)],collapse = ':'),'.fasta'))
      }
   }
