@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param proks.selected
+#' @param bacteria.table
 #' @param species
 #' @param repertoire
 #'
@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-accessionlist <- function(proks.selected,species,repertoire)
+accessionlist <- function(bacteria.table,species,repertoire)
 {
   library(reutils)
   library(ape)
@@ -16,12 +16,12 @@ accessionlist <- function(proks.selected,species,repertoire)
   library(Biostrings)
   library(dplyr)
   library(WriteXLS)
-  proks.selected$Replicons <- unlist(lapply(strsplit(proks.selected$Replicons,split='plasmid'),function(x) x[1]))
+  bacteria.table$Replicons <- unlist(lapply(strsplit(bacteria.table$Replicons,split='plasmid'),function(x) x[1]))
   n.species <- length(species)
 
   for(i in 1:n.species)
   {
-    data1species <- proks.selected[proks.selected$Organism==species[i],]
+    data1species <- bacteria.table[bacteria.table$Organism==species[i],]
     data1species <- data1species[is.na(data1species$Replicons)==F,]
     Nstrains <- dim(data1species)[1]
     Replicon.vec <- NULL

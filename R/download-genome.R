@@ -3,13 +3,14 @@
 #' @param maxOrganism un entier du nombre d'organisme max
 #' @param accession.list la liste des différentes especes
 #' @param repertoire l'emplacement pour telecharger les fichiers
+#' @param indextorestart : the index to restart the analysis. for example, if you interupted the analysis after 20 species, you can specify indextorestart=21
 #'
 #' @return
 #' @export
 
 
 
-downloadgenome <- function(maxOrganism,accession.list,repertoire)
+downloadgenome <- function(maxOrganism,accession.list,repertoire,indextorestart)
 {
   library(reutils)
   library(ape)
@@ -19,7 +20,7 @@ downloadgenome <- function(maxOrganism,accession.list,repertoire)
   library(WriteXLS)
   species <- gsub(basename(accession.list),pattern = '.csv',replacement = '')
   n.species <- length(species)
-  for(i in 1:n.species)
+  for(i in indextorestart:n.species)
   {
     dir.create(paste0(repertoire,species[i]))
     accession <- read.csv(accession.list[i],stringsAsFactors = F)
